@@ -1,0 +1,20 @@
+{% extends 'base.html' %} 
+{% block title %}NewsWeb ~ Health{% endblock %}
+
+{% block content %}
+{% for news in health_news %}
+<div class="row">
+    <div class="col-sm">
+<div class="card" style="width: 18rem; margin: 10px">
+  <img src="{{ news.image }}" class="card-img-top" alt="{{ news.title }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ news.author }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ news.date }}</h6>
+    <p class="card-text">{{ news.title }}</p>
+    <a href="{{ news.url }}" class="btn btn-primary">More Detail</a>
+  </div>
+</div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

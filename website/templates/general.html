@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% block title %}NewsWeb{% endblock %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+{% for news in general_news %}
+ <div class="col-md-4">
+  <div class="card" style="width: 18rem; margin: 10px">
+   <img src="{{ news.image }}" class="card-img-top" alt="{{ news.title }}">
+   <div class="card-body">
+    <h5 class="card-title">
+        {% if news.author %}
+        {{ news.author }}
+        {% else %}
+        Unknown
+        {% endif %}
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ news.date }}</h6>
+    <p class="card-text">{{ news.title }}</p>
+    <a href="{{ news.url }}" class="btn btn-dark">Read More</a>
+   </div>
+  </div>
+ </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}
