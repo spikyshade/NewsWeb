@@ -13,6 +13,6 @@ def create_app():
 
     @app.errorhandler(500)
     def internal_server_error(e):
-        return 'Internal Server Error. Please contact the administrator.\n' + str(e)
+        return f'Internal Server Error. Please contact the administrator.\n {str(e)}'
     
     return app
