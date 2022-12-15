@@ -1,20 +1,20 @@
 {
     "builds": [
         {
-            "src": "main/index.py",
+            "src": "/main/index",
             "use": "@vercel/python"
         }
     ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "main/index.py"
+            "dest": "/main/index"
         }
     ],
      "rewrites": [ 
          { 
-             "source": "/(.*)",
-             "destination": "/api/index" 
+             "src": "/(.*)",
+             "dest": "/main/index" 
          } 
      ] 
 }
