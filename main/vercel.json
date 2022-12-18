@@ -1,7 +1,8 @@
 {
+    "version": 2,
     "builds": [
         {
-            "src": "/main/index.py",
+            "src": "/NewsWeb/main/index.py",
             "use": "@vercel/python"
         }
     ],
