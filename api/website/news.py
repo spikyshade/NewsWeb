@@ -1,12 +1,13 @@
 import requests
 from newsapi import NewsApiClient
+from datetime import datetime
 
 api_key = "9a2431be001148cdba4bd27b6696c2f0"
 
 newsapi = NewsApiClient(api_key=api_key)
 
 def general_news():
-    top_headlines = newsapi.get_top_headlines(language="en", category="general")
+    top_headlines = newsapi.get_top_headlines(language="en", category="general", page_size=30)
 
     # Extract the articles from the response
     articles = top_headlines["articles"]
@@ -17,6 +18,7 @@ def general_news():
     for article in articles:
         author = article["author"]
         title = article["title"]
+        description = article["description"]
         date = article["publishedAt"]
         url = article["url"]
         image = article["urlToImage"]
@@ -25,7 +27,8 @@ def general_news():
         news_item = {
             "author": author,
             "title": title,
-            "date": date,
+            "description": description,
+            "date": datetime.strptime(date, '%Y-%m-%dT%H:%M:%SZ'),
             "url": url,
             "image": image
         }
@@ -35,7 +38,7 @@ def general_news():
     return news_items
 
 def tech_news():
-    top_headlines = newsapi.get_top_headlines(language="en", category="technology")
+    top_headlines = newsapi.get_top_headlines(language="en", category="technology", page_size=30)
 
     # Extract the articles from the response
     articles = top_headlines["articles"]
@@ -47,6 +50,7 @@ def tech_news():
     for article in articles:
         author = article["author"]
         title = article["title"]
+        description = article["description"]
         date = article["publishedAt"]
         url = article["url"]
         image = article["urlToImage"]
@@ -55,6 +59,7 @@ def tech_news():
         news_item = {
             "author": author,
             "title": title,
+            "description": description,
             "date": date,
             "url": url,
             "image": image
@@ -65,7 +70,7 @@ def tech_news():
     return news_items
 
 def sports_news():
-    top_headlines = newsapi.get_top_headlines(language="en", category="sports")
+    top_headlines = newsapi.get_top_headlines(language="en", category="sports", page_size=30)
 
     # Extract the articles from the response
     articles = top_headlines["articles"]
@@ -77,6 +82,7 @@ def sports_news():
     for article in articles:
         author = article["author"]
         title = article["title"]
+        description = article["description"]
         date = article["publishedAt"]
         url = article["url"]
         image = article["urlToImage"]
@@ -85,6 +91,7 @@ def sports_news():
         news_item = {
             "author": author,
             "title": title,
+            "description": description,
             "date": date,
             "url": url,
             "image": image
@@ -95,7 +102,7 @@ def sports_news():
     return news_items
 
 def business_news():
-    top_headlines = newsapi.get_top_headlines(language="en", category="business")
+    top_headlines = newsapi.get_top_headlines(language="en", category="business", page_size=30)
 
     # Extract the articles from the response
     articles = top_headlines["articles"]
@@ -107,6 +114,7 @@ def business_news():
     for article in articles:
         author = article["author"]
         title = article["title"]
+        description = article["description"]
         date = article["publishedAt"]
         url = article["url"]
         image = article["urlToImage"]
@@ -115,6 +123,7 @@ def business_news():
         news_item = {
             "author": author,
             "title": title,
+            "description": description,
             "date": date,
             "url": url,
             "image": image
@@ -125,7 +134,7 @@ def business_news():
     return news_items
 
 def science_news():
-    top_headlines = newsapi.get_top_headlines(language="en", category="science")
+    top_headlines = newsapi.get_top_headlines(language="en", category="science", page_size=30)
 
     # Extract the articles from the response
     articles = top_headlines["articles"]
@@ -137,6 +146,7 @@ def science_news():
     for article in articles:
         author = article["author"]
         title = article["title"]
+        description = article["description"]
         date = article["publishedAt"]
         url = article["url"]
         image = article["urlToImage"]
@@ -145,6 +155,7 @@ def science_news():
         news_item = {
             "author": author,
             "title": title,
+            "description": description,
             "date": date,
             "url": url,
             "image": image
@@ -156,7 +167,7 @@ def science_news():
 
 
 def health_news():
-    top_headlines = newsapi.get_top_headlines(language="en", category="health")
+    top_headlines = newsapi.get_top_headlines(language="en", category="health", page_size=30)
 
     # Extract the articles from the response
     articles = top_headlines["articles"]
@@ -168,6 +179,7 @@ def health_news():
     for article in articles:
         author = article["author"]
         title = article["title"]
+        description = article["description"]
         date = article["publishedAt"]
         url = article["url"]
         image = article["urlToImage"]
@@ -176,6 +188,7 @@ def health_news():
         news_item = {
             "author": author,
             "title": title,
+            "description": description,
             "date": date,
             "url": url,
             "image": image

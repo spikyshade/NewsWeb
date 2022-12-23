@@ -5,25 +5,25 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def general():
-    return render_template('general.html', general_news=general_news())
+    return render_template('/news/general.html', general_news=general_news())
 
 @views.route('/technology', )
 def tech():
-    return render_template('tech.html', tech_news=tech_news())
+    return render_template('/news/tech.html', tech_news=tech_news())
 
 @views.route('/sports')
 def sports():
-    return render_template('sports.html', sports_news=sports_news())
+    return render_template('/news/sports.html', sports_news=sports_news())
 
 @views.route('/science')
 def science():
-    return render_template('science.html', science_news=science_news())
+    return render_template('/news/science.html', science_news=science_news())
 
 @views.route('/business')
 def business():
-    return render_template('business.html', business_news=business_news())
+    return render_template('/news/business.html', business_news=business_news())
 
 @views.route('/health')
 def health():
-    return render_template('health.html', health_news=health_news())
+    return render_template('/news/health.html', health_news=health_news())
 
