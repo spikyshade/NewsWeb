@@ -7,6 +7,6 @@ app.config['SECRECT_KEY'] = 'vfsjkhbclajoeibjvfsdfger'
 
 app.register_blueprint(views, url_prefix='/')
 
-# @app.errorhandler(404)
-# def not_found(e):
-#     return render_template('404.html')
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html')
