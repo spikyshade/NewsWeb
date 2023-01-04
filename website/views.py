@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-from .news import general_news, tech_news, sports_news, business_news, science_news, health_news
+from website.news import general_news, tech_news, sports_news, business_news, science_news, health_news
 
 views = Blueprint('views', __name__)
 
