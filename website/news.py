@@ -6,7 +6,7 @@ api_key = "9a2431be001148cdba4bd27b6696c2f0"
 newsapi = NewsApiClient(api_key=api_key)
 
 def general_news():
-    top_headlines = newsapi.get_top_headlines(language="en", category="general", page_size=30)
+    top_headlines = newsapi.get_top_headlines(language="en", category="general", page_size=50)
 
     # Extract the articles from the response
     articles = top_headlines["articles"]
